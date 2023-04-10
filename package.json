@@ -1,0 +1,21 @@
+{
+  "name": "taxi24",
+  "version": "1.0.0",
+  "description": "Taxi24 Backend Project",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "author": "Abdel Genao",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.3"   
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
