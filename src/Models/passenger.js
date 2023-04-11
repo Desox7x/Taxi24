@@ -18,6 +18,6 @@ const passengerSchema = new mongoose.Schema({
   },
 });
 
-const Passenger = mongoose.model('Passenger', passengerSchema);
+const Passenger = mongoose.models.Passenger || mongoose.model('Passenger', passengerSchema);
 
 export default Passenger;

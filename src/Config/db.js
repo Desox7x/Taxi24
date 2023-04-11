@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
-import config from './config.js';
+import {mongoURI} from './config.js';
 
 async function connectToDatabase() {
   try {
-    await mongoose.connect(config.mongoURI);
+    await mongoose.connect(mongoURI);
     console.log('Connected to database!');
   } catch (error) {
     console.error('Error connecting to database: ', error);
