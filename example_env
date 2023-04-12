@@ -1,0 +1,4 @@
+# mongodb://localhost:27017/example
+MONGO_URI=<su URL de MongoDB>
+# Puede ser PORT 3000 o cual sea que desee.
+PORT=<puerto en el que desea que se ejecute la aplicación>

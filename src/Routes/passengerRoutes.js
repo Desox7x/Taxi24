@@ -4,7 +4,7 @@ import {
   getPassengerById,
   getClosestDrivers,
   createPassenger
-} from "../controllers/passengerController.js";
+} from "../Controllers/passengerController.js";
 
 const router = Router();
 

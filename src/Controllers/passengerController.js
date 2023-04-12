@@ -1,6 +1,6 @@
-import Passenger from "../models/passenger.js";
+import Passenger from "../Models/passenger.js";
 import Driver from "../Models/driver.js";
-import { calculateDistance } from "../Helpers/helpers.js";
+import { calculateDistance } from "../Helpers/distance.js";
 
 export const getPassengers = async (req, res) => {
   try {

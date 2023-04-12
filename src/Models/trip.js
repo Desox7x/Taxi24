@@ -15,7 +15,7 @@ const tripSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ['requested', 'assigned', 'completed'],
+    enum: ['requested', 'assigned', 'completed', 'active'],
     default: 'requested'
   }
 }, { timestamps: true });
