@@ -1,25 +1,29 @@
-import mongoose from 'mongoose';
-import Passenger from '../Models/passenger.js';
+import mongoose from "mongoose";
+import Passenger from "../Models/passenger.js";
 import Driver from "../Models/driver.js";
 
+//Modelado de datos de trip.
 
-const tripSchema = new mongoose.Schema({
-  passengerId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Passenger',
-    required: true
+const tripSchema = new mongoose.Schema(
+  {
+    passengerId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Passenger",
+      required: true,
+    },
+    driverId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Driver",
+    },
+    status: {
+      type: String,
+      enum: ["requested", "assigned", "completed", "active"],
+      default: "requested",
+    },
   },
-  driverId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Driver'
-  },
-  status: {
-    type: String,
-    enum: ['requested', 'assigned', 'completed', 'active'],
-    default: 'requested'
-  }
-}, { timestamps: true });
+  { timestamps: true }
+);
 
-const Trip = mongoose.models.Trip || mongoose.model('Trip', tripSchema);
+const Trip = mongoose.models.Trip || mongoose.model("Trip", tripSchema);
 
 export default Trip;

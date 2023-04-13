@@ -9,19 +9,19 @@ import {
 
 const router = Router();
 
-//Get a list of all drivers
+//Obtener una lista de todos los choferes
 router.get("/drivers", getAllDrivers);
 
-//Create a driver
+//Crear un chofer
 router.post("/drivers/create", createDriver);
 
-// Get a list of all available drivers
+// Obtener una lista de todos los choferes disponibles
 router.get('/drivers/available', getAvailableDrivers);
 
-// Get a specific driver by ID
+// Obtener un chofer por ID
 router.get('/drivers/:id', getDriverById);
 
-// Get a list of all available drivers within a 3 km radius from a passenger location
+// Obtener una lista de todos los choferes disponibles en un radio de 3 kilómetros.
 router.get('/drivers/available/:passengerId', getDriversWithin3Km);
 
 export default router;

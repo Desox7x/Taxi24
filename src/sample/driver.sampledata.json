@@ -1,0 +1,97 @@
+
+[
+  {
+    "COMMENT": "DATOS DE CHOFERES PARA TESTING UTILIZANDO POSTMAN O CUALQUIER API PLATFORM",
+    "WARNING": "NO COPIAR ESTOS MENSAJES"
+  },
+  {
+    "name": "John Doe",
+    "email": "johndoe@example.com",
+    "phone": "+1-555-123-4567",
+    "license": "ABC123",
+    "car": {
+      "make": "Toyota",
+      "model": "Camry",
+      "year": 2018,
+      "color": "silver",
+      "plateNumber": "DEF456"
+    },
+    "available": true,
+    "location": {
+      "type": "Point",
+      "coordinates": [-73.9856, 40.7484]
+    }
+  },
+  {
+    "name": "Jane Smith",
+    "email": "janesmith@example.com",
+    "phone": "+1-555-987-6543",
+    "license": "XYZ789",
+    "car": {
+      "make": "Honda",
+      "model": "Civic",
+      "year": 2015,
+      "color": "black",
+      "plateNumber": "GHI789"
+    },
+    "available": true,
+    "location": {
+      "type": "Point",
+      "coordinates": [-118.2437, 34.0522]
+    }
+  },
+  {
+    "name": "Juan Rodriguez",
+    "email": "juanrodriguez@example.com",
+    "phone": "+1-555-555-5555",
+    "license": "LMN012",
+    "car": {
+      "make": "Ford",
+      "model": "Mustang",
+      "year": 2020,
+      "color": "red",
+      "plateNumber": "OPQ345"
+    },
+    "available": false,
+    "location": {
+      "type": "Point",
+      "coordinates": [-87.6298, 41.8781]
+    }
+  },
+  {
+    "name": "Maria Hernandez",
+    "email": "mariahernandez@example.com",
+    "phone": "+1-555-111-1111",
+    "license": "RST678",
+    "car": {
+      "make": "Nissan",
+      "model": "Altima",
+      "year": 2019,
+      "color": "white",
+      "plateNumber": "UVW012"
+    },
+    "available": true,
+    "location": {
+      "type": "Point",
+      "coordinates": [-95.3698, 29.7604]
+    }
+  },
+  {
+    "name": "Michael Lee",
+    "email": "michaellee@example.com",
+    "phone": "+1-555-222-2222",
+    "license": "XYZ123",
+    "car": {
+      "make": "Chevrolet",
+      "model": "Malibu",
+      "year": 2017,
+      "color": "blue",
+      "plateNumber": "IJK345"
+    },
+    "available": true,
+    "location": {
+      "type": "Point",
+      "coordinates": [-122.4194, 37.7749]
+    }
+  }
+]

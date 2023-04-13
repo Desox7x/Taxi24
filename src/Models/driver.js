@@ -1,4 +1,6 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
+
+//Modelado de datos de chofer.
 
 const driverSchema = new mongoose.Schema({
   name: {
@@ -34,7 +36,7 @@ const driverSchema = new mongoose.Schema({
   location: {
     type: {
       type: String,
-      enum: ['Point'],
+      enum: ["Point"],
       required: true,
     },
     coordinates: {
@@ -44,8 +46,8 @@ const driverSchema = new mongoose.Schema({
   },
 });
 
-driverSchema.index({ location: '2dsphere' });
+driverSchema.index({ location: "2dsphere" });
 
-const Driver = mongoose.models.Driver || mongoose.model('Driver', driverSchema);
+const Driver = mongoose.models.Driver || mongoose.model("Driver", driverSchema);
 
 export default Driver;

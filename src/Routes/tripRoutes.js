@@ -1,19 +1,19 @@
-import express from 'express';
+import express from "express";
 import {
   createTrip,
   completeTrip,
   getActiveTrips,
-} from '../Controllers/tripController.js';
+} from "../Controllers/tripController.js";
 
 const router = express.Router();
 
-// POST route to create a new trip
-router.post('/trips/create', createTrip);
+// Crear un nuevo viaje.
+router.post("/trips/create", createTrip);
 
-// PATCH route to mark a trip as complete
-router.patch('/trips/:id/complete', completeTrip);
+// Marcar un viaje como completado.
+router.patch("/trips/:id/complete", completeTrip);
 
-// GET route to retrieve all active trips
-router.get('/trips/active', getActiveTrips);
+// Obtener todos los viajes activos.
+router.get("/trips/active", getActiveTrips);
 
 export default router;

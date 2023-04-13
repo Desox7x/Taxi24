@@ -2,7 +2,7 @@ import Driver from "../Models/driver.js";
 import Passenger from "../Models/passenger.js";
 import { calculateDistance } from "../Helpers/distance.js";
 
-// Get a list of all drivers
+// Controllador para obtener una lista de todos los choferes.
 export const getAllDrivers = async (req, res) => {
   try {
     const drivers = await Driver.find();
@@ -12,7 +12,7 @@ export const getAllDrivers = async (req, res) => {
   }
 };
 
-// Create a new driver
+// Crear un chofer nuevo
 export const createDriver = async (req, res) => {
   try {
     const driver = new Driver(req.body);
@@ -24,7 +24,7 @@ export const createDriver = async (req, res) => {
   }
 };
 
-// Get a list of all available drivers
+// Obtener una lista de todos los choferes disponibles
 export const getAvailableDrivers = async (req, res) => {
   try {
     const availableDrivers = await Driver.find({ available: true });
@@ -34,7 +34,16 @@ export const getAvailableDrivers = async (req, res) => {
   }
 };
 
-// Get a list of all available drivers within a 3 km radius of the specified location
+// Obtener una lista de todos los choferes disponibles en un radio de 3 kilómetros.
+/*
+Se recibe un ID del pasajero que está buscando a los choferes
+Se obtiene las coordenadas de ese pasajero, guardando la longitud y latitud en un array.
+Luego se obtiene una lista de todos lso choferes con el disponibilidad igual a true.
+Se obtienen las coodenadas de los choferes
+Se calcula la distancia entre el pasajero y la lista de los choferes disponibles, solamente imprimiendo
+los que están en un radio de 3KM (return distance <= 3)
+Se devuelve la constante con un status(200) en json.
+*/
 export const getDriversWithin3Km = async (req, res) => {
   try {
     const passengerId = req.params.passengerId;
@@ -51,13 +60,13 @@ export const getDriversWithin3Km = async (req, res) => {
 
     const drivers = await Driver.find({ available: true });
 
-    // filter drivers within 3km range
+    // Filtro de choferes en un radio de 3KM
     const driversWithin3Km = drivers.filter((driver) => {
       const driverLocation = [
         driver.location.coordinates[1],
         driver.location.coordinates[0],
       ];
-      
+
       console.log(`Passenger location ` + passengerLocation);
       console.log(`Driver location ` + driverLocation);
 
@@ -70,7 +79,7 @@ export const getDriversWithin3Km = async (req, res) => {
       console.log(`Distance between passenger and drivers ` + distance);
       return distance <= 3;
     });
-    
+
     res.status(200).json(driversWithin3Km);
   } catch (error) {
     console.log(error);
@@ -78,9 +87,7 @@ export const getDriversWithin3Km = async (req, res) => {
   }
 };
 
-
-
-// Get a specific driver by ID
+// Obtener un chofer por ID.
 export const getDriverById = async (req, res) => {
   try {
     const driver = await Driver.findById(req.params.id);

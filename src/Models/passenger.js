@@ -1,4 +1,6 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
+
+//Modelado de datos de pasajero
 
 const passengerSchema = new mongoose.Schema({
   name: {
@@ -8,7 +10,7 @@ const passengerSchema = new mongoose.Schema({
   location: {
     type: {
       type: String,
-      enum: ['Point'],
+      enum: ["Point"],
       required: true,
     },
     coordinates: {
@@ -18,6 +20,7 @@ const passengerSchema = new mongoose.Schema({
   },
 });
 
-const Passenger = mongoose.models.Passenger || mongoose.model('Passenger', passengerSchema);
+const Passenger =
+  mongoose.models.Passenger || mongoose.model("Passenger", passengerSchema);
 
 export default Passenger;

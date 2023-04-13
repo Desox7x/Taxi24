@@ -3,6 +3,14 @@ import Passenger from "../Models/passenger.js";
 import Trip from "../Models/trip.js";
 import { calculateDistance } from "../Helpers/distance.js";
 
+/*
+Primero se obtiene el ID del pasajero, si el pasajero no existe devuelve un 404.
+Busca todos los choferes disponibles.
+Busca al conductor mas cercano utilizando la formula del semiverseno que se encuentra en distance.js bajo la carpeta Helpers.
+Actualiza la disponibilidad del chofer a false.
+Se crea un documento Trip, utilizando un el ID del chofer, ID del pasajero, y el cambio de status.
+A la hora de testear, solo hay que poner el ID del pasajero.
+*/
 export const createTrip = async (req, res) => {
   try {
     console.log(req.body);
@@ -43,7 +51,6 @@ export const createTrip = async (req, res) => {
       }
     }
 
-    // update driver status and assign to trip
     closestDriver.available = false;
     console.log(closestDriver);
     await closestDriver.save();
@@ -102,6 +109,7 @@ export const completeTrip = async (req, res) => {
   }
 };
 
+//Obtener una lista de viajes activos
 export const getActiveTrips = async (req, res) => {
   try {
     const trips = await Trip.find({ status: "assigned" })

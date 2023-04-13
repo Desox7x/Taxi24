@@ -1,0 +1,41 @@
+[
+  {
+    "COMMENT": "DATOS DE PASAJEROS PARA TESTING UTILIZANDO POSTMAN O CUALQUIER API PLATFORM",
+    "WARNING": "NO COPIAR ESTOS MENSAJES"
+  },
+  {
+    "name": "John Smith",
+    "location": {
+      "type": "Point",
+      "coordinates": [-122.4194, 37.7749]
+    }
+  },
+  {
+    "name": "Abdel Genao",
+    "location": {
+      "type": "Point",
+      "coordinates": [-73.9866, 40.7306]
+    }
+  },
+  {
+    "name": "Maria Hernandez",
+    "location": {
+      "type": "Point",
+      "coordinates": [-118.2437, 34.0522]
+    }
+  },
+  {
+    "name": "David Kim",
+    "location": {
+      "type": "Point",
+      "coordinates": [-77.0369, 38.9072]
+    }
+  },
+  {
+    "name": "Emma Johnson",
+    "location": {
+      "type": "Point",
+      "coordinates": [-74.0059, 40.7128]
+    }
+  }
+]

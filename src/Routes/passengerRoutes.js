@@ -3,25 +3,21 @@ import {
   getPassengers,
   getPassengerById,
   getClosestDrivers,
-  createPassenger
+  createPassenger,
 } from "../Controllers/passengerController.js";
 
 const router = Router();
 
-// Get a list of all passengers
+// Obtener una lista de todos los pasajeros
 router.get("/passengers", getPassengers);
 
-//Create a new passenger
+//Crear un nuevo pasajero
 router.post("/passengers/create", createPassenger);
 
-// For a passenger requesting a trip, get a list of the 3 closest drivers to the starting point
+// Obtener una lista de los 3 choferes mas cerca del pasajero.
 router.get("/passengers/:location/drivers", getClosestDrivers);
 
-// Get a specific passenger by ID
+// Obtener un pasajero por ID.
 router.get("/passengers/:id", getPassengerById);
-
-
-
-
 
 export default router;
